@@ -22,18 +22,9 @@ To configure the annotations plugin, you can simply add new config options to yo
 {
     plugins: {
         annotation: {
-            // Defines when the annotations are drawn.
-            // This allows positioning of the annotation relative to the other
-            // elements of the graph.
-            //
-            // Should be one of: afterDraw, afterDatasetsDraw, beforeDraw, beforeDatasetsDraw
             // See http://www.chartjs.org/docs/#advanced-usage-creating-plugins
             drawTime: 'afterDatasetsDraw', // (default)
 
-            // Double-click speed in ms used to distinguish single-clicks from
-            // double-clicks whenever you need to capture both. When listening for
-            // both click and dblclick, click events will be delayed by this
-            // amount.
             dblClickSpeed: 350, // ms (default)
 
             // Fires when an annotation is hovered.
@@ -41,8 +32,6 @@ To configure the annotations plugin, you can simply add new config options to yo
                 // context: {chart, element}
             },
 
-            // Array of annotation configuration objects
-            // or Object with the annotation configuration objects, one for each key
             // See below for detailed descriptions of the annotation options
             annotations: [{
                 drawTime: 'afterDraw', // overrides annotation.drawTime if set
@@ -67,7 +56,7 @@ To configure the annotations plugin, you can simply add new config options to yo
 }
 ```
 
-## General options
+## Global options
 
 The following options are configuration which will apply to all annotations elements:
 
@@ -79,6 +68,23 @@ The following options are configuration which will apply to all annotations elem
 | `leave` | `function` | `null` | Called when the mouse is moved out of an annotation.
 | `click` | `function` | `null` | Called when the mouse's single-click is performed on an annotation.
 | `dblclick` | `function` | `null` | Called when the mouse's double-click is performed on an annotation.
+| `annotations` | `Object`\|`Object[]` | `null` | Array of annotation configuration objects or object with the annotation configuration objects, one for each key.
+
+## Common annotation options
+
+The following options are common to all annotation types:
+
+| Name | Type | Default | Scriptable | Description
+| ---- | ---- | ------- | ---------- | -----------
+| `type` | `string` | `line` | - | The type of annoation. Should be one of: `line`, `box`, `ellipse`, `point`. See below the additional options for specific type
+| `drawTime` | `string` | `annotation.drawTime` | - | Defines when the annotations are drawn and overrides global `drawTime` setting.
+| `display` | `boolean` | `true` | Yes | If true, display the annotation.
+| `borderColor` | `Color` | `chart.options.color` | - | The stroke color of the annotation.
+| `borderWidth` | `number` | `1` | - | The stroke width of the annotation.
+| `enter` | `function` | `null` | Called when the mouse is moved over an annotation and overrides global `enter` setting.
+| `leave` | `function` | `null` | Called when the mouse is moved out of an annotation and overrides global `leave` setting.
+| `click` | `function` | `null` | Called when the mouse's single-click is performed on an annotation and overrides global `click` setting.
+| `dblclick` | `function` | `null` | Called when the mouse's double-click is performed on an annotation and overrides global `dblclick` setting.
 
 ### Line Annotations
 

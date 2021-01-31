@@ -67,6 +67,19 @@ To configure the annotations plugin, you can simply add new config options to yo
 }
 ```
 
+## General options
+
+The following options are configuration which will apply to all annotations elements:
+
+| Name | Type | Default | Description
+| ---- | ---- | ------- | -----------
+| `drawTime` | `string` | `afterDatasetsDraw` | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph. Should be one of: `afterDraw`, `afterDatasetsDraw`, `beforeDraw`, `beforeDatasetsDraw`.
+| `dblClickSpeed` | `number` | `350` |  Double-click speed in milliseconds used to distinguish single-clicks from double-clicks whenever you need to capture both. When listening for both `click` and `dblclick`, click events will be delayed by this amount.
+| `enter` | `function` | `null` | Called when the mouse is moved over an annotation.
+| `leave` | `function` | `null` | Called when the mouse is moved out of an annotation.
+| `click` | `function` | `null` | Called when the mouse's single-click is performed on an annotation.
+| `dblclick` | `function` | `null` | Called when the mouse's double-click is performed on an annotation.
+
 ### Line Annotations
 
 ```javascript

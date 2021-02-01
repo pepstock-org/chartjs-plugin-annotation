@@ -62,7 +62,7 @@ The following options are configuration which will apply to all annotations elem
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
-| `drawTime` | `string` | `afterDatasetsDraw` | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph. Should be one of: `afterDraw`, `afterDatasetsDraw`, `beforeDraw`, `beforeDatasetsDraw`.
+| `drawTime` | `string` | `'afterDatasetsDraw'` | Defines when the annotations are drawn. This allows positioning of the annotation relative to the other elements of the graph. Should be one of: `afterDraw`, `afterDatasetsDraw`, `beforeDraw`, `beforeDatasetsDraw`.
 | `dblClickSpeed` | `number` | `350` |  Double-click speed in milliseconds used to distinguish single-clicks from double-clicks whenever you need to capture both. When listening for both `click` and `dblclick`, click events will be delayed by this amount.
 | `enter` | `function` | `null` | Called when the mouse is moved over an annotation.
 | `leave` | `function` | `null` | Called when the mouse is moved out of an annotation.
@@ -76,7 +76,7 @@ The following options are common to all annotation types:
 
 | Name | Type | Default | Scriptable | Description
 | ---- | ---- | ------- | ---------- | -----------
-| `type` | `string` | `line` | - | The type of annoation. Should be one of: `line`, `box`, `ellipse`, `point`. See below the additional options for specific type
+| `type` | `string` | `'line'` | - | The type of annotation. Should be one of: `line`, `box`, `ellipse`, `point`. See below the additional options for specific type
 | `drawTime` | `string` | `annotation.drawTime` | - | Defines when the annotations are drawn and overrides global `drawTime` setting.
 | `display` | `boolean` | `true` | Yes | If true, display the annotation.
 | `borderColor` | `Color` | `chart.options.color` | - | The stroke color of the annotation.
